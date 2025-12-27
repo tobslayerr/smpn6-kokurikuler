@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+
+@media print {
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+  
+  body {
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Sembunyikan Navigasi, Scrollbar, dan Tombol saat print */
+  nav, header, .no-print, button, .sidebar {
+    display: none !important;
+  }
+
+  /* Reset margin halaman web */
+  .min-h-screen {
+    min-height: auto;
+    padding: 0;
+  }
+  
+  .max-w-\[210mm\] {
+    max-width: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+}
