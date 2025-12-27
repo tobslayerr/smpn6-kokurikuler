@@ -23,8 +23,24 @@ export const Login: React.FC = () => {
       
       // Redirect akan ditangani oleh App.tsx di route '/'
       navigate('/');
-    } catch (error: any) {
-      toast.error(error.response?.data?.message || 'Gagal login. Periksa data Anda.');
+   } catch (error: any) {
+      console.error('Login failed:', error);
+      
+      // KODE BARU: Mendeteksi jenis error lebih detail
+      let errorMessage = "Gagal login. Periksa data anda.";
+      
+      if (error.response) {
+        // Server merespon tapi error (misal 401 Password salah, atau 403 Forbidden)
+        errorMessage = error.response.data?.message || `Server Error: ${error.response.status}`;
+      } else if (error.request) {
+        // Tidak ada respon dari server (biasanya Firewall/Sinyal/ModSecurity)
+        errorMessage = "Tidak dapat terhubung ke server. Cek sinyal atau Firewall.";
+      } else {
+        // Error lainnya
+        errorMessage = error.message;
+      }
+
+      toast.error(errorMessage);
     } finally {
       setIsLoading(false);
     }
