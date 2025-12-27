@@ -28,6 +28,19 @@ jobs:
       - name: 🏗️ Build Frontend
         working-directory: ./client
         run: npm run build
+      
+      - name: 📄 Create .htaccess manually
+        run: |
+          cd client/dist
+          echo "<IfModule mod_rewrite.c>" > .htaccess
+          echo "  RewriteEngine On" >> .htaccess
+          echo "  RewriteBase /" >> .htaccess
+          echo "  RewriteRule ^index\.html$ - [L]" >> .htaccess
+          echo "  RewriteCond %{REQUEST_FILENAME} !-f" >> .htaccess
+          echo "  RewriteCond %{REQUEST_FILENAME} !-d" >> .htaccess
+          echo "  RewriteCond %{REQUEST_FILENAME} !-l" >> .htaccess
+          echo "  RewriteRule . /index.html [L]" >> .htaccess
+          echo "</IfModule>" >> .htaccess
 
       - name: 📂 Upload to Public HTML
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -45,10 +58,6 @@ jobs:
           port: 21
           security: loose
           
-          # TAMBAHKAN BAGIAN INI:
-          exclude: |
-            **/.htaccess
-            **/.well-known/**
   # --------------------------------------------------------
   # TUGAS 2: DEPLOY BACKEND (EXPRESS)
   # --------------------------------------------------------
