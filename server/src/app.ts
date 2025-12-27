@@ -22,7 +22,6 @@ app.use(cors({
   origin: [
     'http://localhost:5173', 
     'https://isikokurikuler.labkomputersmpn6pekalongan.my.id', 
-    'https://www.isikokurikuler.labkomputersmpn6pekalongan.my.id' 
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],

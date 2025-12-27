@@ -51,7 +51,7 @@ jobs:
           # Upload isi folder dist (hasil build React)
           local-dir: ./client/dist/
           # Masukkan ke public_html (folder website utama)
-          server-dir: ./isikokurikuler.labkomputersmpn6pekalongan.my.id/ 
+          server-dir: ./kokurikuler.smpn6pekalongan.org/ 
           # PENTING: dangerous-clean-slate: true akan MENGHAPUS file lama di public_html agar bersih
           dangerous-clean-slate: true 
           protocol: ftp
@@ -101,7 +101,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./deploy-package/
-          server-dir: ./repositories/backend-smpn6/
+          server-dir: ./repositories/backend-isikokurikuler/
           # --- TAMBAHAN PENTING DI BAWAH INI ---
           protocol: ftp
           port: 21
