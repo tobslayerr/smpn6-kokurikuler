@@ -43,6 +43,12 @@ jobs:
           dangerous-clean-slate: true 
           protocol: ftp
           port: 21
+          security: loose
+          
+          # TAMBAHKAN BAGIAN INI:
+          exclude: |
+            **/.htaccess
+            **/.well-known/**
   # --------------------------------------------------------
   # TUGAS 2: DEPLOY BACKEND (EXPRESS)
   # --------------------------------------------------------
