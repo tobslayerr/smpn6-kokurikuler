@@ -38,10 +38,11 @@ jobs:
           # Upload isi folder dist (hasil build React)
           local-dir: ./client/dist/
           # Masukkan ke public_html (folder website utama)
-          server-dir: ./public_html/ 
+          server-dir: ./isikokurikuler.labkomputersmpn6pekalongan.my.id/ 
           # PENTING: dangerous-clean-slate: true akan MENGHAPUS file lama di public_html agar bersih
           dangerous-clean-slate: true 
-
+          protocol: ftp
+          port: 21
   # --------------------------------------------------------
   # TUGAS 2: DEPLOY BACKEND (EXPRESS)
   # --------------------------------------------------------
