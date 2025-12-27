@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://backendkokurikuler.labkomputersmpn6pekalongan.my.id/api', 
+  baseURL: 'https://backendkokurikuler.smpn6pekalongan.org/api', 
   headers: {
     'Content-Type': 'application/json',
   },

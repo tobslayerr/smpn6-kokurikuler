@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: [
     'http://localhost:5173', 
-    'https://isikokurikuler.labkomputersmpn6pekalongan.my.id', 
+    'https://kokurikuler.smpn6pekalongan.org', 
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
