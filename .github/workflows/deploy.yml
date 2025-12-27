@@ -86,6 +86,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./deploy-package/
           server-dir: ./repositories/backend-smpn6/
-          # TAMBAHKAN 2 BARIS INI:
+          # --- TAMBAHAN PENTING DI BAWAH INI ---
           protocol: ftp
           port: 21
+          security: loose
