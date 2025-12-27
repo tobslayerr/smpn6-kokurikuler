@@ -85,5 +85,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./deploy-package/
-          # Lokasi sesuai "Application root" di step Node.js cPanel
           server-dir: ./repositories/backend-smpn6/
+          # TAMBAHKAN 2 BARIS INI:
+          protocol: ftp
+          port: 21
